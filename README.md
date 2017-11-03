@@ -23,3 +23,6 @@ select serial number you want.
 
 # Requirement
 ABD command should be available under shell.
+
+# TODO
+- [ ] single command dispatch to all devices have connected
