@@ -1,0 +1,37 @@
+#!/bin/bash
+
+DEVICES=`adb devices|grep \w*device$|sed "s/[\t]*device//"`
+
+eval $(echo $DEVICES|awk '{if("'"$no"'"<= NF) {
+    printf("devCount=%d;",NF);
+    for(i=1;i<=NF;i++){
+        printf("array[%d]=%s;",i,$i)
+    }
+}}'
+)
+
+hasDevice=false
+if [ ${devCount} -le 1 ]; then
+    hasDevice=true
+fi
+
+for i in $@;do
+    if [ "-s" == $i ];then
+        hasDevice=true
+    fi
+    cmd="${cmd} $i"
+done 
+
+
+if [ $hasDevice == false ];then
+    echo $DEVICES|sed "s/ /\n/g"|awk  '{printf("%d) %s\n",NR,$0)}'
+    read -p 'select device:' no
+
+    cmd="adb -s ${array[$no]} ${cmd}"
+else
+    cmd="adb ${cmd}"
+fi
+
+eval $cmd
+    
+
