@@ -1,5 +1,5 @@
 # Enhanced ADB
-List all devices if there're more than one devices has connected to your computer before using any function throught ADB.
+List all devices if there're more than one device/emulator has connected to your computer before using any function throught ADB.
 
 # Usage
 Firstly, add the path about **adbs** to your PATH.
