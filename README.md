@@ -7,7 +7,7 @@ Firstly, add the path about **adbs** to your PATH.
 ```shell
 git clone git@github.com:demonk/adbs.git
 cd adbs
-echo `pwd` >> ~/.bashrc
+echo "export PATH=$PATH:`pwd`"
 ```
 
 Then use it as official ADB.
