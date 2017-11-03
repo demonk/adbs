@@ -17,8 +17,9 @@ Then use it as official ADB.
 abds pull /etc/hosts ~
 ```
 
+![](sample.png)
+
+select serial number you want.
+
 # Requirement
 ABD command should be available under shell.
-
-
-
