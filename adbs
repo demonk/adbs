@@ -32,6 +32,6 @@ else
     cmd="adb ${cmd}"
 fi
 
-eval $cmd
+eval '$cmd'
     
 
